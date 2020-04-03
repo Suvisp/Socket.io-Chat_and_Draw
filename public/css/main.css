@@ -17,3 +17,7 @@ input[type="button"],
 input[type="submit"] {
     cursor: pointer;
 }
+
+.lobby {
+    background-image: url("../images/taustakuva.png");
+}
