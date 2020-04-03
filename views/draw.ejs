@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Draw</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/draw.css">
 </head>
+
 <body>
     <div class="container">
         <div class="row">
@@ -36,9 +39,9 @@
                 <!-- Colors -->
                 <div id="colors"></div>
                 <!-- Thickness -->
-                <div class="thickness small"  data-thickness="1">1</div>
+                <div class="thickness small" data-thickness="1">1</div>
                 <div class="thickness medium" data-thickness="3">3</div>
-                <div class="thickness big"    data-thickness="6">6</div>
+                <div class="thickness big" data-thickness="6">6</div>
             </div>
         </div>
         <div class="row">
@@ -56,14 +59,21 @@
                     <div class="col">
                         <form id="messageForm" class="hidden">
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" autocomplete="off" placeholder="chat..." id="messageInput">
+                                <input type="text" class="form-control" autocomplete="off" placeholder="chat..."
+                                    id="messageInput">
                                 <div class="input-group-append">
                                     <button class="btn btn-outline-primary" type="submit">Send</button>
                                 </div>
                             </div>
                         </form>
                     </div>
-                </div>
+                 
+
+                <!-- </div> -->
+                   <!-- <div id="listofpeople" {users} >Mukana pelissä:</div> -->
+                   <!-- <div class="peoplelist" id="users">Mukana pelissä: -->
+                    <!-- <ul id="peoplelist"></ul> -->
+                <!-- </div> -->
             </div>
         </div>
     </div>
@@ -72,4 +82,5 @@
     <script src="/js/chat.js" type="module"></script>
     <script src="/js/draw.js" type="module"></script>
 </body>
+
 </html>

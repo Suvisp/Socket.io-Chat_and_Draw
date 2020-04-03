@@ -25,6 +25,7 @@ namespaces.map(ns => io.of(`/${ns}`))
 .forEach(ns => {
     // users is a key-value pairs of socket.id -> user name
     let users = {};
+    allUsers = []
     ns.on('connection', (socket) => {
         // Every socket connection has a unique ID
         console.log('new connection: ' + socket.id)
@@ -34,6 +35,8 @@ namespaces.map(ns => io.of(`/${ns}`))
             console.log('login', name)
             // Map socket.id to the name
             users[socket.id] = name;
+           // update the list of users in chat, client-side
+		io.emit('updateusers', users);
             
             // Broadcast to everyone else (except the sender).
             // Say that the user has logged in.
@@ -41,10 +44,24 @@ namespaces.map(ns => io.of(`/${ns}`))
                 from: 'server',
                 message: `${name} logged in.`
             })
-        })
+            console.log(users);
+            // for (let i = 0; i < users.lenght; i++) { //luuppaa läpi kolme ensimmäistä hakutulosta
+            //     //Hakee nimen ja sen alle listalementeiksi valitus ravintosisällöt:
+            //     var uusili = "";
+            //     uusili += `${users[i].name} <li> ${(users[i].name)</li>`;
+            //     console.log(uusili);
+        //     push.allUsers(users.name);
+        //     console.log(allUsers);
+        //      // User Added to list
+        //   socket.on('addList', (name) => {
+        //     console.log('addList', name)
+        //     // Map socket.id to the name
+        //     users[socket.id] = name;
         
+        // })
+        })
         // Message Recieved
-        socket.on('msg', (message) => {
+        socket.on('msg', (message) => { 
             console.log('msg', message)
             // Broadcast to everyone else (except the sender)
             socket.broadcast.emit('msg', {
@@ -91,6 +108,7 @@ namespaces.map(ns => io.of(`/${ns}`))
         socket.on('setColor', (c) => socket.broadcast.emit('setColor', c))
         socket.on('setThickness', (r) => socket.broadcast.emit('setThickness', r))
     })
+
 })
 
 // Routes
