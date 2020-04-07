@@ -4,10 +4,13 @@ const http = require('http').Server(app)
 const io = require('socket.io')(http)
 const path = require('path')
 const logger = require('morgan')
+var cors=require('cors')
 
 const port = process.env.PORT || 3000
 app.set('port', port)
 http.listen(port, () => console.log('listening on port ' + port));
+
+app.use(cors())
 
 // view engine setup
 app.set('view engine', 'ejs');
@@ -127,3 +130,8 @@ app.get('/draw/:namespace', (req, res) => {
     }
     res.render('draw')
 })
+
+var wordRouter = require('./routes/word');
+
+app.use('/draw/Piirtoalias/word', wordRouter);
+

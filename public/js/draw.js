@@ -111,6 +111,38 @@ function onPageLoad() {
             Remote.send(Remote.e.setThickness, thickness)
         })
     }
+
+    //   // getWord button
+    //   document.getElementById("getwordbtn").addEventListener("click", getword)
+    // //   document.getElementById('word').addEventListener('click', wordHandler)
+
+    // //   function wordHandler() {
+    //     // undo()
+    //     // Remote.send(Remote.e.undo)
+    //     function getword(event) {
+    //             word.innerHTML = "";
+    //             // console.dir(this);
+    //             // console.dir(event);
+    //             console.log("get words");
+    //             getWordApi().then(allwords => {
+    //                 console.log(allwords);
+    //                 //Arpoo random sanan tietokannan sanoista
+    //                 let randWord = "";
+    //                 const randNum = Math.floor(Math.random() * allwords.length)
+    //                 randWord = allwords[randNum].word
+    //             //Ohje pelaajalle -> Piirrä: randomsana
+    //                 word.innerHTML = `Piirrä: ` + randWord;
+    //             })
+    //         //         .catch((error) => {
+    //         //             console.error('Error:', error);
+    //         //         });
+    //         // }
+            
+    //         function getWordApi() {
+    //             return fetch("/draw/Piirtoalias/word")
+    //                 .then(res => res.json());
+    //         }
+    // }
 }
 
 function undo() {

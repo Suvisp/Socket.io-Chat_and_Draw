@@ -7,7 +7,7 @@ let namespace = url[url.length - 1];
 const socket = io(`/${namespace}`)
 
 window.addEventListener('load', () => {
-    document.getElementById('title').innerText = `Peli: ${namespace}`
+    document.getElementById('title').innerText = `${namespace}`
     document.title = namespace
 })
 
